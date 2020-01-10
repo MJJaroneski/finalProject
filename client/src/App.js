@@ -7,13 +7,17 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing";
+import Navbar from "./components/home/Navbar";
+import Landing from "./components/home/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/profile/Profile";
+import About from "../src/components/about/About";
+import Directions from "../src/components/directions/Directions";
+import Shows from "../src/components/shows/Shows";
+import Artists from "../src/components/artists/Artists";
 import "./App.css";
 
 // Check for token to keep user logged in
@@ -45,6 +49,10 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/directions" component={Directions} />
+            <Route exact path="/artists" component={Artists} />
+            <Route exact path="/shows" component={Shows} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/profile" component={Profile} />
