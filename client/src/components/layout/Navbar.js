@@ -1,27 +1,30 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import About from "../"
 
-class Navbar extends Component {
-  render() {
-    return (
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
-            <Link
-              to="/"
-              style={{
-                fontFamily: "monospace"
-              }}
-              className="col s5 brand-logo center black-text"
-            >
-              <i className="material-icons">code</i>
-              MERN
-            </Link>
-          </div>
-        </nav>
-      </div>
-    );
-  }
+function NavTabs(props) {
+  return (
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <a href="#home" onClick={() => props.handlePageChange("Home")} className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}>
+          Home
+        </a>
+      </li>
+      <li className="nav-item">
+        <a href="#About" onClick={() => props.handlePageChange("About")} className={props.currentPage === "About" ? "nav-link active" : "nav-link"}>
+          About
+        </a>
+      </li>
+      <li className="nav-item">
+      <a href="#home" onClick={() => props.handlePageChange("Home")} className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}>
+          Home
+      </a>
+      </li>
+      <li className="nav-item">
+        <a href="#contact" onClick={() => props.handlePageChange("Contact")} className="nav-link">
+          Contact
+        </a>
+      </li>
+    </ul>
+  );
 }
-
-export default Navbar;
+export default NavTabs;
