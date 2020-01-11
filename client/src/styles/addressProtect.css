@@ -1,0 +1,28 @@
+body{
+    background: url(../img/Blush6.jpg);
+    background-size:cover;
+}
+.jumbotron{
+    background-color: rgb(75, 74, 74, 0.5) !important;
+}
+.big{
+    font-family: 'Monoton', cursive;
+    font-size: 115px;
+}
+.mainButton{
+    background-color:  #F39303;
+    border: 0pt;
+}
+.lead{
+    font-size: 40px !important;
+    color: antiquewhite;
+}
+.passwordBtn{
+    background-color: crimson !important;
+    border: cornsilk !important;
+    font-size: 20px;
+}
+.formlink:link{
+    color: crimson !important;
+    border: cornsilk !important;
+}

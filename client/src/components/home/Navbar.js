@@ -1,38 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 function NavTabs(props) {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a href="#home" onClick={() => props.handlePageChange("Home")} className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}>
+        <Link to="/" onClick={() => props.handlePageChange("index")} className={props.currentPage === "index" ? "nav-link active" : "nav-link"}>
           Home
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a href="../about" onClick={() => props.handlePageChange("About")} className={props.currentPage === "About" ? "nav-link active" : "nav-link"}>
+        <Link to="../about" onClick={() => props.handlePageChange("About")} className={props.currentPage === "About" ? "nav-link active" : "nav-link"}>
           About
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-      <a href="../directions" onClick={() => props.handlePageChange("Directions")} className={props.currentPage === "Directions" ? "nav-link active" : "nav-link"}>
+      <Link to="../directions" onClick={() => props.handlePageChange("Directions")} className={props.currentPage === "Directions" ? "nav-link active" : "nav-link"}>
           Directions
-      </a>
+      </Link>
       </li>
       <li className="nav-item">
-        <a href="../contact" onClick={() => props.handlePageChange("Contact")} className="nav-link">
+        <Link to="../contact" onClick={() => props.handlePageChange("Contact")} className="nav-link">
           Contact
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-      <a href="../shows" onClick={() => props.handlePageChange("Shows")} className={props.currentPage === "Shows" ? "nav-link active" : "nav-link"}>
+      <Link to="../shows" onClick={() => props.handlePageChange("Shows")} className={props.currentPage === "Shows" ? "nav-link active" : "nav-link"}>
           Upcoming Shows
-      </a>
+      </Link>
       </li>
       <li className="nav-item">
-      <a href="../artists" onClick={() => props.handlePageChange("Artists")} className={props.currentPage === "Artists" ? "nav-link active" : "nav-link"}>
+      <Link to="../artists" onClick={() => props.handlePageChange("Artists")} className={props.currentPage === "Artists" ? "nav-link active" : "nav-link"}>
           Artists
-      </a>
+      </Link>
       </li>
     </ul>
   );

@@ -1,0 +1,27 @@
+body{
+    background: url(../img/Mon34.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.jumbotron{
+    background-color: rgb(75, 74, 74, 0.5) !important;
+}
+.big{
+    font-family: 'Monoton', cursive;
+    font-size: 115px;
+}
+.mainButton{
+    background-color:  #F39303;
+    border: 0pt;
+}
+.lead{
+    font-size: 40px;
+    color: antiquewhite;
+}
+#address{
+    font-size: 24px;
+    color: antiquewhite;
+}
+#drivewayPic{
+    margin-bottom: 30px !important;
+}
