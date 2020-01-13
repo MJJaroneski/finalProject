@@ -1,62 +1,64 @@
+import React, { Component } from "react";
+import Jumbotron from "../Jumbotron";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../Grid";
+import { List, ListItem } from "../List";
 
-// /client/Artist.js
-import React, { Component } from 'react';
-import axios from 'axios';
+
 
 class Artists extends Component {
-  // initialize our state
   state = {
-    data: [],
-    id: 0,
-    message: null,
-    intervalIsSet: false,
-    idToDelete: null,
-    idToUpdate: null,
-    objectToUpdate: null,
+    name: [],
+    genre: "",
+    city: "",
+    state: ""
   };
 
-  
   componentDidMount() {
-    this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
+    this.loadBooks();
   }
 
- 
-  // in order to identify which we want to Update or delete.
-  // for our back end, we use the object id assigned by MongoDB to modify
-  // data base entries
-
-  // our first get method that uses our backend api to
-  // fetch data from our data base
-  getDataFromDb = () => {
-    axios.get('http://localhost:3000/routes/artists')
-      .then((data) => data.json())
-      .then((res) => this.setState({ data: res.json }));
+  loadArtists = () => {
+    API.getArtists()
+      .then(res =>
+        this.setState({ artists: res.data, name: "", genre: "", city: "", state: ""})
+      )
+      .catch(err => console.log(err));
   };
 
 
-  // here is our UI
-  // it is easy to understand their functions when you
-  // see them render into our screen
   render() {
-    const { data } = this.state;
     return (
-      <div>
-        <ul>
-          {data.length <= 0
-            ? 'NO DB ENTRIES YET'
-            : data.map((dat) => (
-                <li style={{ padding: '10px' }} key={data.message}>
-                  <span style={{ color: 'gray' }}> id: </span> {dat.id} <br />
-                  <span style={{ color: 'gray' }}> data: </span>
-                  {dat.message}
-                </li>
-              ))}
-        </ul>
-      </div>
+      <Container fluid>
+        <Row>
+          <Col size="md-6">
+            <Jumbotron>
+              <h1>What Books Should I Read?</h1>
+            </Jumbotron>
+            
+          </Col>
+          <Col size="md-6 sm-12">
+            
+            {this.state.artists.length ? (
+              <List>
+                {this.state.artists.map(Artists => (
+                  <ListItem key={Artists._id}>
+                    <Link to={"/artists/" + Artists._id}>
+                      <strong>
+                        {Artists.name} by {Artists.genre}
+                      </strong>
+                    </Link>
+                    
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
