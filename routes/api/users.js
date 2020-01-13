@@ -15,6 +15,10 @@ const User = require("../../models/User");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
+router.get('/', (req, res) => {
+  console.log('yay')
+})
+
 router.post("/register", (req, res) => {
   // Form validation
 
@@ -86,7 +90,7 @@ router.post("/login", (req, res) => {
         // Sign token
         jwt.sign(
           payload,
-          keys.secretOrKey,
+          keys.users.secretOrKey,
           {
             expiresIn: 31556926 // 1 year in seconds
           },

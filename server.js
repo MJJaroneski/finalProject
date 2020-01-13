@@ -5,6 +5,7 @@ const passport = require("passport");
 const multer = require('multer');
 const cors = require('cors');
 const users = require("./routes/api/users");
+const artists = require("./routes/api/artists");
 const app = express();
 // Multer Upload
 var storage = multer.diskStorage({
@@ -49,5 +50,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use("/api/artists", artists);
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
