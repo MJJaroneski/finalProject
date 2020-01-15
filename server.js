@@ -1,39 +1,39 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const passport = require("passport");
-const multer = require('multer');
-const cors = require('cors');
+// const bodyParser = require("body-parser");
+// const passport = require("passport");
+// const multer = require('multer');
+// const cors = require('cors');
 const users = require("./routes/api/users");
 const artists = require("./routes/api/artists");
 const app = express();
 // Multer Upload
-var storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-  cb(null, 'public/images/uploads')
-},
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname)
-}
-});
-const upload = multer({ storage })
-// Upload Route
-app.post('/upload', upload.single('image'), (req, res) => {
-	if (req.file)
-		res.json({
-			imageUrl: `images/uploads/${req.file.filename}`
-	});
-	else
-		res.status("409").json("No Files to Upload.");
-});
-// Bodyparser middleware
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
-app.use(bodyParser.json());
-app.use(cors());
+// var storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//   cb(null, 'public/images/uploads')
+// },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + '-' + file.originalname)
+// }
+// });
+// const upload = multer({ storage })
+// // Upload Route
+// app.post('/upload', upload.single('image'), (req, res) => {
+// 	if (req.file)
+// 		res.json({
+// 			imageUrl: `images/uploads/${req.file.filename}`
+// 	});
+// 	else
+// 		res.status("409").json("No Files to Upload.");
+// });
+// // Bodyparser middleware
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: false
+//   })
+// );
+// app.use(bodyParser.json());
+// app.use(cors());
 // DB Config
 const db = require("./config/keys").mongoURI;
 const connectDB = require('./config/db');
@@ -49,9 +49,9 @@ const connectDB = require('./config/db');
 //   .catch(err => console.log(err));
 // Passport middleware
 connectDB();
-app.use(passport.initialize());
+// app.use(passport.initialize());
 // Passport config
-require("./config/passport")(passport);
+const passport = require("./config/passport");
 // Routes
 app.use("/api/users", users);
 
