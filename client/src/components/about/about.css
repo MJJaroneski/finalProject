@@ -1,4 +1,4 @@
-body{
+.aboutBody{
     background-image: linear-gradient(to bottom right,#900c3f, #ffc300);
 }
 
@@ -17,11 +17,11 @@ body{
     font-size: 40px;
     color: antiquewhite;
 }
-#aboutLead{
+.aboutLead{
     color: antiquewhite;
     font-size: 45px;
 }
-#aboutText{
+.aboutText{
     color: bisque;
     font-size: 20px;
 }
@@ -41,7 +41,7 @@ body{
     font-size: 20px;
     margin-bottom: 15px;
 }
-#harassment{
+.harassment{
     font-size: 30px;
     color: antiquewhite !important;
     text-align: center;
