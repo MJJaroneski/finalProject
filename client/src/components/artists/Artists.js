@@ -1,66 +1,43 @@
-import React, { Component } from "react";
-import Jumbotron from "../Jumbotron";
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../Grid";
-import { List, ListItem } from "../List";
+import React from 'react';
 
-
-
-class Artists extends Component {
-  state = {
+import axios from 'axios';
+class Artists extends React.Component {
+// /client/Artist.js
+  // initialize our sttate
+  constructor(){
+    super()
+    this.state = {
     name: [],
     genre: "",
     city: "",
     state: ""
   };
+  }
+  
+
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadArtists()
+    console.log("test")
   }
 
   loadArtists = () => {
-    API.getArtists()
+    axios.get("localhost:3000/routes/artists")
       .then(res =>
-        this.setState({ artists: res.data, name: "", genre: "", city: "", state: ""})
+        console.log("response", res)
+        // this.setState({ artists: res.data, name: "", genre: "", city: "", state: ""})
       )
       .catch(err => console.log(err));
   };
 
-
   render() {
+  
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron>
-            
-          </Col>
-          <Col size="md-6 sm-12">
-            
-            {this.state.artists.length ? (
-              <List>
-                {this.state.artists.map(Artists => (
-                  <ListItem key={Artists._id}>
-                    <Link to={"/artists/" + Artists._id}>
-                      <strong>
-                        {Artists.name} by {Artists.genre}
-                      </strong>
-                    </Link>
-                    
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-      </Container>
+      <div>Artists</div>
+      
     );
   }
 }
+
 
 export default Artists;

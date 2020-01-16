@@ -83,7 +83,6 @@ class About extends React.Component {
                 </p>
           </div>
         </Container>
-
       </body>
     );
   }
