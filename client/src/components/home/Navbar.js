@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function NavTabs(props) {
   return (
-    <ul className="nav nav-tabs">
+    <ul className="nav nav-pills">
       <li className="nav-item">
         <Link to="/" onClick={() => props.handlePageChange("index")} className={props.currentPage === "index" ? "nav-link active" : "nav-link"}>
           Home
