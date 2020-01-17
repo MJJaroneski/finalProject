@@ -1,4 +1,4 @@
-body{
+.hiddenBody{
     background: url(../img/Mon34.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,10 +18,10 @@ body{
     font-size: 40px;
     color: antiquewhite;
 }
-#address{
+.address{
     font-size: 24px;
     color: antiquewhite;
 }
-#drivewayPic{
+.drivewayPic{
     margin-bottom: 30px !important;
 }
