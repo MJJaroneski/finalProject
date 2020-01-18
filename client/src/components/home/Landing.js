@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "../Grid";
+import { NavTabs } from "./NavBar";
 import "./home.css";
 
 class Landing extends Component {
@@ -9,6 +10,7 @@ class Landing extends Component {
   render() {
     return (
       <body className="bodyHome">
+      <NavTabs />
       <Container>
         <h1 className="display-4 big">Lucy Lane</h1>
            <p className="lead">Lucy Lane is an artistic outlet for anyone wanting to expand and share their respective craft, with a direct focus on music. All artists are welcome to come indulge, and make our habitat a place of warm fuzzy feelings and beautiful expression.</p>

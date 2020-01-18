@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-function NavTabs(props) {
+export function NavTabs(props) {
   return (
-    <ul className="nav nav-pills">
+    <div>
+    <ul className=" nav nav-pills">
       <li className="nav-item">
         <Link to="/" onClick={() => props.handlePageChange("index")} className={props.currentPage === "index" ? "nav-link active" : "nav-link"}>
           Home
@@ -36,6 +37,7 @@ function NavTabs(props) {
       </Link>
       </li>
     </ul>
+  </div>
   );
 }
 export default NavTabs;

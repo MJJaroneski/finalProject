@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { NavTabs } from "../home/NavBar";
+import "./artists.css";
 import axios from 'axios';
 class Artists extends React.Component {
 // /client/Artist.js
@@ -33,7 +34,12 @@ class Artists extends React.Component {
   render() {
   
     return (
-      <div>Artists</div>
+      <div>
+      <NavTabs />
+      <body className="artistsBody">
+        
+      </body>
+      </div>
       
     );
   }

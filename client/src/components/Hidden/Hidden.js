@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Container } from "../Grid";
 import Jumbotron from "../Jumbotron";
+import { NavTabs } from "../home/NavBar";
 import "../Jumbotron";
 import "./hiddenPage.css";
 
@@ -12,6 +13,7 @@ class Hidden extends React.Component {
     render(){
         return (
             <body className="hiddenBody">
+            <NavTabs />
             <Jumbotron>
                 <h1 className="display-4">Lucy Lane Directions</h1>
                 <p className="lead">Please read carefully.</p>

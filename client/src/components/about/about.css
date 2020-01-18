@@ -1,5 +1,7 @@
 .aboutBody{
     background-image: linear-gradient(to bottom right,#900c3f, #ffc300);
+    padding-bottom: 50px;
+    padding-top: 10px;
 }
 
 .jumbotron{

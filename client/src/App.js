@@ -7,7 +7,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navbar from "./components/home/Navbar";
+// import NavTabs from "./components/home/NavBar";
 import Landing from "./components/home/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -42,12 +42,10 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
+      <div>
       <Provider store={store}>
         <Router>
-          <div className="App">
-            
-            <Navbar />
-            
+          <div className="body">
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
@@ -64,6 +62,7 @@ class App extends Component {
          
         </Router>
       </Provider>
+      </div>
     );
   }
 }

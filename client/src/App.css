@@ -1,7 +1,7 @@
 .list-group-item {
     line-height: 2.5;
   }
-  body{
+body{
     background-color: #881A12;
     background-size: cover;
   }
@@ -22,7 +22,7 @@
       text-align: center;
   }
   .nav{
-    margin-top: 20px;
+    /* margin-top: 20px; */
       margin-left: 30px;
       margin-right: 30px;
       margin-bottom: 40px;
