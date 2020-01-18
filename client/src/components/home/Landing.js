@@ -17,7 +17,7 @@ class Landing extends Component {
 
               <button className="btn btn-primary btn-lg mainBtn" href="#" target="_blank" onClick={(e) => this.handleClick(e)}>Learn more</button>
               <br></br>
-      </Container>
+      </Container> 
       </body>
     );
   }
